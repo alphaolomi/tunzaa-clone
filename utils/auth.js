@@ -4,7 +4,7 @@ import { API_KEY } from "@env";
 export async function createUser(phone, password) {
   await axios
     .post(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBoBnp6O9noa_c0Oux_r3wSXOYH0a8VmNY`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
       {
         email: phone,
         password: password,

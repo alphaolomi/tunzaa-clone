@@ -17,6 +17,7 @@ import MyButtonStroked from "../ui/MyButtonStroked";
 import { useNavigation } from "@react-navigation/native";
 import { createUser } from "../utils/auth";
 import { AntDesign } from "@expo/vector-icons";
+import { API_KEY } from "@env";
 
 const SignupScreen = () => {
   const [isChecked, setChecked] = useState(false);
@@ -44,7 +45,7 @@ const SignupScreen = () => {
     setSubmitting(true);
 
     fetch(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBoBnp6O9noa_c0Oux_r3wSXOYH0a8VmNY`,
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
       {
         method: "POST",
         body: JSON.stringify({

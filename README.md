@@ -1,7 +1,4 @@
-Tunzaa clone build in React Native + TailwindCSS using firebase
-
-#Description
-Tunzaa Clone app
+Tunzaa clone build in React Native + TailwindCSS using firebase REST API
 
 # Preview
 
@@ -22,9 +19,9 @@ Here are these steps to run the project locally
 3. Create firebase project and select the web app.
    Make sure you have enabled the following firebse services
 
-- Authentication. Enable Google sign-in method.
-  - Cloud Storage
+- Authentication. Enable Email sign-in method.
 
 4. Add your Firebase Config to.env
+   Create .env file then add your API_KEY to .env file
 
-5.
+5. Finally , `npx expo start`
