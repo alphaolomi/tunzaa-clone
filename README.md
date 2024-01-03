@@ -31,10 +31,10 @@ Here are these steps to run the project locally
 # ScreenShots
 
 HOME SCREEN
-![Signin Screen](./screenshots/home.jpg =390x844)
+<img src="./screenshots/home.jpg" height=390 width=844>
 SIGNIN SCREEN
-![Signin Screen](./screenshots/signin.jpg =390x844)
+<img src="./screenshots/signin.jpg" height=390 width=844>
 PRODUCT SCREEN
-![Product Screen](./screenshots/product.jpg =390x844)
+<img src="./screenshots/product.jpg" height=390 width=844>
 SETTINGS SCREEN
-![Setting Screen](./screenshots/settings.jpg =390x844)
+<img src="./screenshots/settings.jpg" height=390 width=844>
