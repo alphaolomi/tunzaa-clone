@@ -21,86 +21,16 @@ const HomeScreen = () => {
   const [products, setProducts] = useState(items);
   const navigation = useNavigation();
 
-  const renderItem = ({ item }) => {
-    return (
-      <TouchableOpacity
-        onPress={() => navigation.navigate("ProductDescription")}
-        className=" m-1 bg-white w-[160px] border border-gray-300 rounded-xl justify-center items-center"
-      >
-        <Image
-          className=" rounded-t-xl"
-          style={{
-            width: "100%",
-            height: 100,
-            // borderTopLeftRadius: 12,
-            // borderTopRightRadius: 12,
-            resizeMode: "cover",
-          }}
-          source={{ uri: item.imgUrl }}
-        />
-
-        <Text
-          style={{
-            color: Colors.darkGray,
-            height: 35,
-            marginVertical: 5,
-            fontSize: 12,
-            marginHorizontal: 6,
-          }}
-        >
-          {item.title}
-        </Text>
-
-        <Text
-          style={{
-            color: Colors.primaryColor,
-            fontWeight: "700",
-
-            fontSize: 16,
-            marginBottom: 8,
-          }}
-        >
-          Tsh {item.price}
-        </Text>
-        <View className="flex flex-row justify-between w-full">
-          <View />
-          <View className="flex flex-row m-3 gap-3">
-            <Feather name="heart" size={24} color="gray" />
-            <AntDesign name="sharealt" size={24} color="gray" />
-          </View>
-        </View>
-      </TouchableOpacity>
-    );
-  };
   return (
     <SafeAreaView
       style={{
         backgroundColor: Colors.secondaryColor,
         height: "100%",
       }}
-      className="flex mt-8 "
     >
       <StatusBar style="light" backgroundColor={Colors.darkGray} />
       <Toolbar />
-      <View>
-        {/* <View className="flex-row justify-center  bg-white mx-6 pt-4 -mt-4 rounded-2xl">
-          <View>
-            <Text className="mx-4 font-semibold ">BIDHAA</Text>
-            <View
-              style={{
-                backgroundColor: Colors.primaryColor,
-                height: 4,
-                marginHorizontal: 15,
-                marginTop: 12,
-                borderRadius: 5,
-              }}
-            />
-          </View>
-          <View>
-            <Text className="mx-4 font-light">HUDUMA</Text>
-          </View>
-        </View> */}
-
+      <View style={{ paddingBottom: 100 }}>
         <View className="flex-row items-center  -mt-6  space-x-3 px-4 pb-2 ">
           <View className="flex-row flex-1 items-center p-3 rounded-xl bg-white border border-gray-300">
             <TextInput

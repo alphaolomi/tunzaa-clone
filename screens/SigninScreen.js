@@ -9,7 +9,6 @@ import {
   ToastAndroid,
 } from "react-native";
 import React, { useState } from "react";
-import Checkbox from "expo-checkbox";
 import Colors from "../constants/Colors";
 import MyButton from "../ui/MyButton";
 import { StatusBar } from "expo-status-bar";
@@ -18,7 +17,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { API_KEY } from "@env";
-import { signinUser } from "../utils/auth";
 
 const SigninScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState(null);
@@ -39,37 +37,34 @@ const SigninScreen = () => {
       return;
     }
 
-    fetch(
-      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
-      {
-        method: "POST",
-        body: JSON.stringify({
-          email: "+255" + phoneNumber + "@tunzaa.com",
-          password: password,
-          returnSecureToken: true,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .catch((err) => {
-        console.log(err);
-        alert("Authentication failed, please try again!");
-      })
-      .then((res) => res.json())
-      .then((parsedRes) => {
-        console.log("LLLGGGGIIINN");
-        console.log(parsedRes.localId);
-        console.log("LLLGGGGIIINN");
-        if (!parsedRes.idToken) {
-          alert("Error occured: " + parsedRes.error.message);
-        } else {
-          ToastAndroid.show("Success!", ToastAndroid.SHORT);
-          dispatch(login({ email: email, userId: parsedRes.localId }));
-          navigation.navigate("Home");
-        }
-      });
+    // fetch(
+    //   `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
+    //   {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       email: "+255" + phoneNumber + "@tunzaaclone.com",
+    //       password: password,
+    //       returnSecureToken: true,
+    //     }),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }
+    // )
+    //   .catch((err) => {
+    //     console.log(err);
+    //     alert("Authentication failed, please try again!");
+    //   })
+    //   .then((res) => res.json())
+    //   .then((parsedRes) => {
+    //     if (!parsedRes.idToken) {
+    //       // alert("Error occured: " + parsedRes.error.message);
+    //     } else {
+    //       ToastAndroid.show("Success!", ToastAndroid.SHORT);
+
+    //       navigation.navigate("Home");
+    //     }
+    //   });
 
     setSubmitting(false);
   };

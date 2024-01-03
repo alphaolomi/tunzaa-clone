@@ -20,7 +20,7 @@ const MoreMenuScreen = () => {
         backgroundColor: Colors.secondaryColor,
         height: "100%",
       }}
-      className="flex mt-8 "
+      className="flex"
     >
       <StatusBar style="light" backgroundColor={Colors.primaryColor} />
       <View className=" flex-row justify-between items-center">

@@ -31,16 +31,8 @@ const BotttomTabs = () => {
   const [loggedIn, setLogged] = useState(false);
   const navigation = useNavigation();
 
-  const { user } = useSelector((state) => state.user);
+  // const { user } = useSelector((state) => state.user);
 
-  console.log("XXXXXXXXX");
-  console.log(user);
-
-  // useEffect(() => {
-  //   if (!loggedIn) {
-  //     navigation.navigate("Signin");
-  //   }
-  // }, [loggedIn]);
   return (
     <Tab.Navigator
       screenOptions={{

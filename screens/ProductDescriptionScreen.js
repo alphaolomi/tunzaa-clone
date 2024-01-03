@@ -5,6 +5,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  ToastAndroid,
 } from "react-native";
 import React from "react";
 import ToolbarMain from "../ui/ToolbarMain";
@@ -16,9 +17,13 @@ import { AntDesign, Feather, Entypo } from "@expo/vector-icons";
 const ProductDescriptionScreen = () => {
   const { params: item } = useRoute();
 
-  const buyNowHandler = () => {};
+  const buyNowHandler = () => {
+    ToastAndroid.show("Not implemented!", ToastAndroid.SHORT);
+  };
 
-  const inInstallmentHandler = () => {};
+  const inInstallmentHandler = () => {
+    ToastAndroid.show("Not implemented!", ToastAndroid.SHORT);
+  };
   return (
     <View>
       <ScrollView
