@@ -17,6 +17,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { API_KEY } from "@env";
+import { login } from "../slices/userSlice";
 
 const SigninScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState(null);
@@ -37,34 +38,39 @@ const SigninScreen = () => {
       return;
     }
 
-    // fetch(
-    //   `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
-    //   {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       email: "+255" + phoneNumber + "@tunzaaclone.com",
-    //       password: password,
-    //       returnSecureToken: true,
-    //     }),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // )
-    //   .catch((err) => {
-    //     console.log(err);
-    //     alert("Authentication failed, please try again!");
-    //   })
-    //   .then((res) => res.json())
-    //   .then((parsedRes) => {
-    //     if (!parsedRes.idToken) {
-    //       // alert("Error occured: " + parsedRes.error.message);
-    //     } else {
-    //       ToastAndroid.show("Success!", ToastAndroid.SHORT);
-
-    //       navigation.navigate("Home");
-    //     }
-    //   });
+    fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: "+255" + phoneNumber + "@tunzaaclone.com",
+          password: password,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .catch((err) => {
+        console.log(err);
+        alert("Authentication failed, please try again!");
+      })
+      .then((res) => res.json())
+      .then((parsedRes) => {
+        if (!parsedRes.idToken) {
+          // alert("Error occured: " + parsedRes.error.message);
+        } else {
+          dispatch(
+            login({
+              email: "+255" + phoneNumber + "@tunzaaclone.com",
+              userId: parsedRes.localId,
+            })
+          );
+          ToastAndroid.show("Success!", ToastAndroid.SHORT);
+          navigation.navigate("Home");
+        }
+      });
 
     setSubmitting(false);
   };

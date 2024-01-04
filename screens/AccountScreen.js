@@ -26,7 +26,8 @@ import InterestCard from "../components/account/InterestCard";
 import ToolbarMain from "../ui/ToolbarMain";
 import EditCard from "../components/account/EditCard";
 import * as ImagePicker from "expo-image-picker";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../slices/userSlice";
 
 const AccountScreen = () => {
   const screenheight = Dimensions.get("window").height;
@@ -34,7 +35,8 @@ const AccountScreen = () => {
   const [editCard, setEditCard] = useState(null);
   const [image, setImage] = useState(null);
 
-  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   const takePhoto = async () => {
     try {
@@ -54,6 +56,10 @@ const AccountScreen = () => {
     } catch (e) {
       Alert.alert("Error Uploading Image " + e.message);
     }
+  };
+
+  const logoutHandler = () => {
+    dispatch(logout());
   };
 
   return (
@@ -89,12 +95,13 @@ const AccountScreen = () => {
           <ScrollView alwaysBounceVertical style={{ flexDirection: "column" }}>
             <View className=" pt-4   mt-6 bg-white mx-4 rounded-xl">
               <View className="justify-evenly flex-row">
-                <View
+                <TouchableOpacity
+                  onPress={logoutHandler}
                   style={{ backgroundColor: Colors.primaryColor }}
                   className=" h-8 w-8 rounded-full justify-center items-center rotate-180"
                 >
                   <Ionicons name="log-out-outline" size={20} color="white" />
-                </View>
+                </TouchableOpacity>
                 <TouchableOpacity
                   onPress={takePhoto}
                   className=" w-24 h-24 rounded-full bg-gray-200 items-end"
@@ -132,7 +139,7 @@ const AccountScreen = () => {
                 <Text
                   style={{ color: Colors.primaryColor, fontWeight: "bold" }}
                 >
-                  Isayisaya
+                  {user?.user?.email}
                 </Text>
               </View>
               <View
@@ -177,7 +184,7 @@ const AccountScreen = () => {
                     fontSize: 12,
                   }}
                 >
-                  isayaexavery@gmail.com
+                  {user?.user?.email}
                 </Text>
               </View>
             </View>
@@ -203,7 +210,10 @@ const AccountScreen = () => {
                     fontSize: 12,
                   }}
                 >
-                  +2557155915464
+                  {user?.user?.email.substring(
+                    0,
+                    user?.user?.email.indexOf("@")
+                  )}
                 </Text>
               </View>
             </View>

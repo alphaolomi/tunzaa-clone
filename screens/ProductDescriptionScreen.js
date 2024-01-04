@@ -11,11 +11,12 @@ import React from "react";
 import ToolbarMain from "../ui/ToolbarMain";
 import Colors from "../constants/Colors";
 import { StatusBar } from "expo-status-bar";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { AntDesign, Feather, Entypo } from "@expo/vector-icons";
 
 const ProductDescriptionScreen = () => {
   const { params: item } = useRoute();
+  const navigation = useNavigation();
 
   const buyNowHandler = () => {
     ToastAndroid.show("Not implemented!", ToastAndroid.SHORT);
