@@ -4,12 +4,14 @@
 
 Tunzaa clone build in React Native + TailwindCSS using firebase REST API
 
-#Tech
+## Tech
+
 React Native
 Tailwind CSS
 Firebase
 
-#Development
+## Development
+
 Here are these steps to run the project locally
 
 1. Clone the repository
@@ -30,11 +32,14 @@ Here are these steps to run the project locally
 
 # ScreenShots
 
-HOME SCREEN <br>
+**HOME SCREEN** <br>
 <img src="./screenshots/home.jpg" width=390 height=844> <br>
-SIGNIN SCREEN <br>
+
+**SIGNIN SCREEN** <br>
 <img src="./screenshots/signin.jpg" width=390 height=844> <br>
-PRODUCT SCREEN <br>
+
+**PRODUCT SCREEN** <br>
 <img src="./screenshots/product.jpg" width=390 height=844> <br>
-SETTINGS SCREEN
+
+**SETTINGS SCREEN** <br>
 <img src="./screenshots/settings.jpg" width=390 height=844> <br>
