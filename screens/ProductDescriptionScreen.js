@@ -22,9 +22,6 @@ const ProductDescriptionScreen = () => {
     ToastAndroid.show("Not implemented!", ToastAndroid.SHORT);
   };
 
-  const inInstallmentHandler = () => {
-    ToastAndroid.show("Not implemented!", ToastAndroid.SHORT);
-  };
   return (
     <View>
       <ScrollView
@@ -143,7 +140,7 @@ const ProductDescriptionScreen = () => {
           au
         </Text>
         <TouchableOpacity
-          onPress={inInstallmentHandler}
+          onPress={() => navigation.navigate("Payment", { item: item.item })}
           style={{ backgroundColor: Colors.primaryColor }}
           className="bg-green-500 py-3 px-6 rounded-full justify-center items-center"
         >

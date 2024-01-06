@@ -165,7 +165,9 @@ const EditCard = ({ onPress }) => {
                 style={{ color: Colors.primaryColor }}
                 className=" mb-3 w-3/4 bg-white font-semibold"
               >
-                {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
+                {`${date.getDate()}/${
+                  date.getMonth() + 1
+                }/${date.getFullYear()}`}
               </Text>
               <SimpleLineIcons
                 name="calendar"

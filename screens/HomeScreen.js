@@ -15,7 +15,6 @@ import Colors from "../constants/Colors";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { items } from "../constants/data";
 import { useNavigation } from "@react-navigation/native";
-import { API_URL } from "@env";
 
 const HomeScreen = () => {
   const [products, setProducts] = useState(items);
@@ -94,7 +93,14 @@ const HomeScreen = () => {
                   source={require("../assets/tunzaa.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity className="mx-1.5">
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Shop", {
+                    shop: "tigo",
+                  })
+                }
+                className="mx-1.5"
+              >
                 <Image
                   style={{
                     width: 60,
@@ -105,7 +111,14 @@ const HomeScreen = () => {
                   source={require("../assets/tigo.jpeg")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity className="mx-1.5">
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Shop", {
+                    shop: "cloudsfm",
+                  })
+                }
+                className="mx-1.5"
+              >
                 <Image
                   style={{
                     width: 60,
@@ -116,7 +129,14 @@ const HomeScreen = () => {
                   source={require("../assets/cloudsfm.jpeg")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity className="mx-1.5">
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Shop", {
+                    shop: "tunzaa",
+                  })
+                }
+                className="mx-1.5"
+              >
                 <Image
                   style={{
                     width: 60,
@@ -127,7 +147,14 @@ const HomeScreen = () => {
                   source={require("../assets/tunzaa.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity className="mx-1.5">
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Shop", {
+                    shop: "mkuki",
+                  })
+                }
+                className="mx-1.5"
+              >
                 <Image
                   style={{
                     width: 60,
@@ -138,7 +165,14 @@ const HomeScreen = () => {
                   source={require("../assets/mkuki.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity className="mx-1.5">
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Shop", {
+                    shop: "tunzaa",
+                  })
+                }
+                className="mx-1.5"
+              >
                 <Image
                   style={{
                     width: 60,

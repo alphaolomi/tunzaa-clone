@@ -7,5 +7,6 @@ export default {
   lightGray: "#8e8e8e",
   gray: "#cccc",
   green: "#355E3B",
+  yellow: "#FFC300",
 };
 // #2596be

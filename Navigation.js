@@ -24,6 +24,8 @@ import Colors from "./constants/Colors";
 import SettingScreen from "./screens/SettingScreen";
 import { useSelector } from "react-redux";
 import ShopScreen from "./screens/ShopScreen";
+import PaymentScreen from "./screens/PaymentScreen";
+import PaymentTimeScreen from "./screens/PaymentTimeScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -207,6 +209,28 @@ function Navigation() {
         <Stack.Screen
           name="ProductDescription"
           component={ProductDescriptionScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={PaymentScreen}
+          options={{
+            headerShown: false,
+            presentation: "modal",
+          }}
+        />
+        <Stack.Screen
+          name="PaymentTime"
+          component={PaymentTimeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="PaymentSave"
+          component={PaymentTimeScreen}
           options={{
             headerShown: false,
           }}

@@ -6,9 +6,10 @@ Tunzaa clone build in React Native + TailwindCSS using firebase REST API
 
 ## Tech
 
-React Native
-Tailwind CSS
-Firebase
+**React Native** <br>
+**Tailwind CSS** <br>
+**Firebase** <br>
+**Redux** <br>
 
 ## Development
 
@@ -28,18 +29,15 @@ Here are these steps to run the project locally
 4. Add your Firebase Config.
    Create .env file then add your API_KEY to .env file
 
-5. Finally , `npx expo start`
+5. Finally , <br> `npx expo start`
 
 # ScreenShots
 
 **HOME SCREEN** <br>
-<img src="./screenshots/home.jpg" width=390 height=844> <br>
-
-**SIGNIN SCREEN** <br>
-<img src="./screenshots/signin.jpg" width=390 height=844> <br>
+<img src="./screenshots/home.gif" width=390 height=844> <br>
 
 **PRODUCT SCREEN** <br>
-<img src="./screenshots/product.jpg" width=390 height=844> <br>
+<img src="./screenshots/product.gif" width=390 height=844> <br>
 
-**SETTINGS SCREEN** <br>
-<img src="./screenshots/settings.jpg" width=390 height=844> <br>
+**SIGNIN SCREEN** <br>
+<img src="./screenshots/account.gif" width=390 height=844> <br>
